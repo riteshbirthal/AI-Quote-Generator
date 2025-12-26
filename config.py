@@ -22,6 +22,10 @@ class Settings(BaseSettings):
     youtube_client_id: str = Field(default="", env="YOUTUBE_CLIENT_ID")
     youtube_client_secret: str = Field(default="", env="YOUTUBE_CLIENT_SECRET")
     
+    # Stock Video APIs (free)
+    pexels_api_key: str = Field(default="", env="PEXELS_API_KEY")
+    pixabay_api_key: str = Field(default="", env="PIXABAY_API_KEY")
+    
     # Paths
     output_dir: Path = Field(default=Path("./output"))
     temp_dir: Path = Field(default=Path("./temp"))
@@ -41,6 +45,14 @@ QUOTE_CATEGORIES = [
     "motivation", "success", "mindset", "discipline",
     "perseverance", "wisdom", "leadership", "growth"
 ]
+
+# Story categories
+STORY_CATEGORIES = [
+    "moral", "funny", "anime", "horror", "inspirational"
+]
+
+# Content types for output organization
+CONTENT_TYPES = ["quotes", "stories", "anime"]
 
 # Visual themes for backgrounds
 VISUAL_THEMES = [
